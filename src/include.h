@@ -19,6 +19,7 @@
 #include "general/general.h"
 #include "menus/menus.h"
 #include "objects/objects.h"
+#include "logo/logo.h"
 
 /*=================================MACROS=====================================*/
 
@@ -32,7 +33,6 @@ enum program_status
     LOGO,
     MAIN_MENU,
     RUNNING,
-    STOPPED,
     DEAD_MENU,
     VICTORY_MENU,
     END

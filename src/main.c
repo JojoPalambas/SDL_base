@@ -15,7 +15,7 @@ int main(void)
         else if (global->program_status == MAIN_MENU)
             main_menu(global);
         else if (global->program_status == RUNNING)
-            game(global);
+            game_run(global);
         else if (global->program_status == DEAD_MENU)
             dead_menu(global);
         else if (global->program_status == VICTORY_MENU)
