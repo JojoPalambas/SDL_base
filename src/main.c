@@ -8,7 +8,7 @@ int main(void)
 
     logo(global);
 
-    menu(global);
+    main_menu(global);
 
     game(global);
 

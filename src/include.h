@@ -4,7 +4,7 @@
 /*=================================INCLUDES===================================*/
 
 #include <stdio.h>
-//#include <string.h>
+#include <string.h>
 #include <stdlib.h>
 #include <stdint.h>
 #include <err.h>
@@ -12,8 +12,13 @@
 #include <SDL2/SDL.h>
 
 #include <SDL2/SDL_image.h>
-//#include <SDL2/SDL_ttf.h>
-//#include <SDL2/SDL_mixer.h>
+#include <SDL2/SDL_ttf.h>
+#include <SDL2/SDL_mixer.h>
+
+#include "game/game.h"
+#include "general/general.h"
+#include "menus/menus.h"
+#include "objects/objects.h"
 
 /*=================================MACROS=====================================*/
 
@@ -24,7 +29,7 @@
 /*=================================ENUMS======================================*/
 enum program_status
 {
-    MENU,
+    MAIN_MENU,
     RUNNING,
     STOPPED,
     DEAD,
@@ -33,17 +38,6 @@ enum program_status
 };
 
 /*=================================STRUCTURES=================================*/
-
-struct inputs
-{
-    // 1 if pressed, else 0
-    int up;
-    int down;
-    int left;
-    int right;
-    int space;
-    int escape;
-};
 
 struct global
 {
@@ -58,12 +52,5 @@ struct global
 };
 
 /*=================================FUNCTIONS==================================*/
-
-/* init.c */
-struct global *init_all(void);
-void destroy_all(struct global *global);
-
-/* game.c */
-void game(struct global *global);
 
 #endif
