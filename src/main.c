@@ -8,9 +8,19 @@ int main(void)
 
     logo(global);
 
-    main_menu(global);
-
-    game(global);
+    while (global->program_status != END)
+    {
+        if (global->program_status == LOGO)
+            logo(global);
+        else if (global->program_status == MAIN_MENU)
+            main_menu(global);
+        else if (global->program_status == RUNNING)
+            game(global);
+        else if (global->program_status == DEAD_MENU)
+            dead_menu(global);
+        else if (global->program_status == VICTORY_MENU)
+            victory_menu(global);
+    }
 
     destroy_all(global);
     return 0;

@@ -29,11 +29,12 @@
 /*=================================ENUMS======================================*/
 enum program_status
 {
+    LOGO,
     MAIN_MENU,
     RUNNING,
     STOPPED,
-    DEAD,
-    VICTORY,
+    DEAD_MENU,
+    VICTORY_MENU,
     END
 };
 
@@ -49,6 +50,7 @@ struct global
 
     struct inputs inputs;
     enum program_status program_status;
+    enum program_status last_program_status status;
 };
 
 /*=================================FUNCTIONS==================================*/
