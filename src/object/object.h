@@ -66,12 +66,12 @@ struct frame
 
 struct animation
 {
-    struct frame *frames;   // Frames of the animation
-    struct frame cur_frame; // Current frame being displayed
+    struct frame **frames;   // Frames of the animation
+    struct frame *cur_frame; // Current frame being displayed
     int nb_frames;          // Number of frames = length(frames)
     int frame_duration;     // Number of tics for each frame
-    int min_frame_duration; // Minimum frame diration (if duration is random)
     int counter;            // if counter == 0 -> change frame
+    int min_frame_duration; // Minimum frame diration (if duration is random)
     int random_duration;    /* If the duration of a frame is
                                randint(min_frame_duration, frame_duration) */
     int random_order;       // If the next frame is randomly chosen
@@ -83,6 +83,7 @@ struct animation
 struct animator
 {
     struct animation *cur_anim; // Current animation
+    int nb_anims;
     struct animation **anims;   // Animations managed by the animator
 }
 

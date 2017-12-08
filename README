@@ -91,6 +91,9 @@ Current maintainers:
 ARCHITECTURE
 ------------
 
+Excluding the very basic files as AUTHORS, README, TODO, the project is shared
+in two folders:
+
   * The ressources folder contains all the non-code ressources of the project,
     such as animators (see Animators & animations section), maps or texts.
 
@@ -118,6 +121,44 @@ ARCHITECTURE
 
 ANIMATORS & ANIMATIONS
 ----------------------
+
+One of the strengths of this project is a smart management of animations and
+hitboxes, shared in four structures:
+
+  * The animator structure is the most top-level structure. It's the one that
+    will go directly in displayed objects, such as the main character, monsters,
+    blocks or even the background of the main menu.
+
+    This structure will be used anytime when the program needs to
+    display the object or to check its hitbox. It contains a pointer to an
+    animation, which corresponds to the current animation displayed by the
+    animator, an array of pointers to animations corresponding to all the
+    animations displayable by the animator, and an int storing the length of the
+    array.
+
+  * The animation structure (abbreviated by "anim" in the functions names) is
+    the most sophisticated structure, managing both animations and hitboxes. The
+    phylosophy behind this structure is to allow each animation to have its
+    hitbox, different from the ones in the other animations, to allow a creature
+    to become indestructible, transparent, or vulnerable. As you will see in the
+    next point, with this implementation, even every single frame can have its
+    own set of hitboxes , to perfectly match its proportions anytime.
+
+    This structure contains a pointer to the current frame, an array
+    containing pointers to all the frames of the animation and an int storing
+    the size of the array. It also contains 5 ints describing the flow of the
+    frames:
+      - frame_duration: duration of the frame, i.e. number of tics (i.e. number
+        of updates) that the frame will last (or maximum duration of the frame,
+        if its duration is set to random (see below))
+      - 
+
+
+
+print hitbox
+appel de animator_display(enum)
+appel des check hitbox
+
 
                     ╔╦╗╦ ╦╔═╗╔╗╔╦╔═  ╦ ╦╔═╗╦ ╦
                      ║ ╠═╣╠═╣║║║╠╩╗  ╚╦╝║ ║║ ║
