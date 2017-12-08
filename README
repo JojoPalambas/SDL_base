@@ -1,3 +1,81 @@
-# anticipation-fighter
-A turn-by-turn tactical game where the player has to anticipate his moves a few
-turns in advance.
+                        ╦═╗╔═╗╔═╗╔╦╗╔╦╗╔═╗
+                        ╠╦╝║╣ ╠═╣ ║║║║║║╣
+                        ╩╚═╚═╝╩ ╩═╩╝╩ ╩╚═╝
+
+CONTENTS OF THIS FILE
+---------------------
+
+  * Introduction
+  * Requirements
+  * Recommended modules
+  * Installation
+  * Configuration
+  * Troubleshooting
+  * FAQ
+  * Maintainers
+
+
+INTRODUCTION
+------------
+
+The purpose of this project is to create a base that could be used by almost
+every SDL game project ever.
+
+Its architecture both precise and permissive. It is precise because you should
+use it in almost only one way possible, using the structures and functions
+contained in the project. It is permissive because almost any kind of pixeled
+game can be done using this, and non-pixeled games too (with some
+modifications).
+
+
+REQUIREMENTS
+------------
+
+Before using this, you should:
+  * Know how to code in C language
+  * Know a little bit of SDL manipulation
+
+
+RECOMMENDED MODULES
+-------------------
+
+  * C Standard Library
+  * SDL2, SDL2_image, SDL2_ttf, SDL2_mixer modules
+
+
+INSTALLATION
+------------
+
+This project comes with an example, a mini-game containing a main menu, a game
+where the player has to make his character reach the red door or the blue door
+using the directionnal and with the possibility to jump, a pause menu, a victory
+menu and a game over menu. To play the game:
+  * Compile it by typing "make" in the root
+  * Play it by typing "./main" in the root
+  * Remove compiled files by typing "make clean" in the root
+
+
+TROUBLESHOOTING
+---------------
+
+  * If the program is not working properly
+    - Check you have the recommended modules
+    - Relaunch the game
+    - Remove the compiled files and re-compile
+    - Maybe try to solve the problem if indicated by the compiler or the game
+    - Email me at gabriel.depotte@outlook.com and explain me the problem
+
+
+FAQ
+---
+
+
+MAINTAINERS
+-----------
+
+Current maintainers:
+ * Gabriel Depotte (JojoPalambas, <gabriel.depotte@outlook.com>)
+
+                    ╔╦╗╦ ╦╔═╗╔╗╔╦╔═  ╦ ╦╔═╗╦ ╦
+                     ║ ╠═╣╠═╣║║║╠╩╗  ╚╦╝║ ║║ ║
+                     ╩ ╩ ╩╩ ╩╝╚╝╩ ╩   ╩ ╚═╝╚═╝
