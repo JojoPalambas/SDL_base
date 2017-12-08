@@ -166,7 +166,13 @@ hitboxes, shared in four structures:
         the the current frame can be chosen as the next frame
       - loop: if loop is set to 0, the animation ends when the last frame is
         reached, and is replaced by another one
-      - next: a pointer to the next animation if loop is set to 0.
+      - next: a pointer to the next animation if loop is set to 0
+
+  * The frame structure is made to handle the display and the collisions of the
+    object. It can possibly have any number of hitboxes with different
+    characteristics. It contains a pointer to the texture to draw, the width and
+    the height of the image, the number of hitboxes it contains and an array of
+    pointer to its hitboxes.
 
 
 
