@@ -66,8 +66,8 @@ struct frame
 
 struct animation
 {
-    struct frame **frames;   // Frames of the animation
-    struct frame *cur_frame; // Current frame being displayed
+    struct frame **frames;  // Frames of the animation
+    int cur_frame_index     // Current frame being displayed
     int nb_frames;          // Number of frames = length(frames)
     int frame_duration;     // Number of tics for each frame
     int counter;            // if counter == 0 -> change frame

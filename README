@@ -144,19 +144,34 @@ hitboxes, shared in four structures:
     next point, with this implementation, even every single frame can have its
     own set of hitboxes , to perfectly match its proportions anytime.
 
-    This structure contains a pointer to the current frame, an array
-    containing pointers to all the frames of the animation and an int storing
-    the size of the array. It also contains 5 ints describing the flow of the
-    frames:
+    This structure contains an array containing pointers to all the frames of
+    the animation, an int pointing to the current frame in the array and an int
+    storing the size of the array. It also contains 8 values describing the flow
+    of the frames:
       - frame_duration: duration of the frame, i.e. number of tics (i.e. number
         of updates) that the frame will last (or maximum duration of the frame,
         if its duration is set to random (see below))
-      - 
+      - counter: time remaining until the end of the current frame. If it equals
+        0, the current frame is changed and the value of the counter is set to
+        frame_duration or to a random value between min_frame_duration and
+        frame_duration if the duration is set to random
+      - min_frame_duration: minimum duration of the frame if its duration is set
+        to random (see below)
+      - random_duration: if this value is set to 1, every time the frame
+        changes, the counter is randomly set between min_frame_duration and
+        frame_duration included
+      - random_order: if this value is set to 1, every time the frame changes,
+        the new frame is randomly chosen in all the frames of the animation
+      - repeat: if random_order is set to 1, this variable chooses whether
+        the the current frame can be chosen as the next frame
+      - loop: if loop is set to 0, the animation ends when the last frame is
+        reached, and is replaced by another one
+      - next: a pointer to the next animation if loop is set to 0.
 
 
 
 print hitbox
-appel de animator_display(enum)
+appel de animator_display(enum) (changement d'anim, changement de frame)
 appel des check hitbox
 
 
