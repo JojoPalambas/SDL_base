@@ -5,15 +5,23 @@
 CONTENTS OF THIS FILE
 ---------------------
 
-  * Introduction
-  * Requirements
-  * Recommended modules
-  * Installation
-  * Configuration
-  * Troubleshooting
-  * FAQ
-  * Maintainers
+  * Prologue
+    - Introduction
+    - Requirements
+    - Recommended modules
+    - Installation
+    - Configuration
+    - Troubleshooting
+    - FAQ
+    - Maintainers
+  * How to use
+    - Architecture
+    - Animators & animations
 
+
+        ================
+            PROLOGUE
+        ================
 
 INTRODUCTION
 ------------
@@ -75,6 +83,41 @@ MAINTAINERS
 
 Current maintainers:
  * Gabriel Depotte (JojoPalambas, <gabriel.depotte@outlook.com>)
+
+        ==================
+            HOW TO USE
+        ==================
+
+ARCHITECTURE
+------------
+
+  * The ressources folder contains all the non-code ressources of the project,
+    such as animators (see Animators & animations section), maps or texts.
+
+  * The src folder contains all and only the code of the project. It is
+    subdivided in a few main files and folders:
+      - main.c: contains the main program, i.e. the loop switching between the
+        menus and the game
+      - include.h: the master header file, including all the other headers and
+        being included by them too. It is the hub of the code: it is the only
+        one ho should include standard headers, as the standard library headers
+        and the SDL headers. It should be kept clean and clear, and explicitely
+        declare only the most global structures and functions
+      - general: contains functions that can be useful anywhere in the program,
+        even in the menus, such as basic displaying functions, time manager, or
+        the program's global initializer and destructor.
+      - logo: contains all the functions used to display the logo at the
+        beginning of the game
+      - menu: contains all the functions used to manage the menus: main menu,
+        game over menu, victory menu, in-game pause menu and even more if you
+        want
+      - object: contains all the functions used to manage objects in general,
+        such as the functions used to display animations or tpo manage
+        collisions
+
+
+ANIMATORS & ANIMATIONS
+----------------------
 
                     ╔╦╗╦ ╦╔═╗╔╗╔╦╔═  ╦ ╦╔═╗╦ ╦
                      ║ ╠═╣╠═╣║║║╠╩╗  ╚╦╝║ ║║ ║
